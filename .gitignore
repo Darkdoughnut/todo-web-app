@@ -1,2 +1,5 @@
-/.vscode/
-/out/
+/dist/
+/coverage/
+/node_modules/
+/src/*.js
+/test/*.js

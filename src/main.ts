@@ -1,10 +1,12 @@
-interface Person {
-    name: string;
-    age: number;
-}
+import { birthday } from './person';
 
-function birthday(someone : Person) : Person {
-    return {name: someone.name, age: someone.age+1};
-}
+let people = [
+    { name: "Justin", age: 20 },
+    { name: "Caleb", age: 19 },
+];
 
-console.dir(birthday({name:"Judy",age:40}));
+document.write("<ol>");
+for (let person of people) {
+    document.write(`<li>${JSON.stringify(birthday(person))}</li>`);
+}
+document.write("</ol>");
