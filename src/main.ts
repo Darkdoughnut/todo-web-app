@@ -1,12 +1,13 @@
-import { birthday } from './person';
+import { View } from './interface/view';
+import { TodoController } from "./TodoController";
+import { TodoView } from "./TodoView";
 
-let people = [
-    { name: "Justin", age: 20 },
-    { name: "Caleb", age: 19 },
-];
+let view = new TodoView();
+let controller = new TodoController(view);
 
-document.write("<ol>");
-for (let person of people) {
-    document.write(`<li>${JSON.stringify(birthday(person))}</li>`);
+function draw() {
+    requestAnimationFrame(draw);
+    view.render(document.body);
 }
-document.write("</ol>");
+
+draw();

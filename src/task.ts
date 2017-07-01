@@ -1,12 +1,11 @@
-type Tag = string;
-type UniqueID = number;
+export type Tag = string;
+export type UniqueId = number;
 
-
-class task {
-    ID: UniqueID;
+export class Task {
+    id: UniqueId;
     title: string;
     createdTimestamp: Date;
-    finishedTimestamp: Date | null;
+    finishedTimestamp?: Date;
     tags: Tag[];
-    dependencies: UniqueID[];
+    dependencies: UniqueId[];
 }
