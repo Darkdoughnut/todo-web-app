@@ -2,18 +2,18 @@
   "name": "todo",
   "version": "0.1.0",
   "description": "A sort of fancy todo list to set as our homepage",
+  "author": "Justin Hao <djhao@umich.edu>",
+  "contributors": [
+    "Caleb Jones <code@calebjones.net>"
+  ],
   "repository": "https://github.com/Darkdoughnut/todo-web-app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp lint && gulp build && gulp test"
   },
   "keywords": [
     "todo",
     "app"
-  ],
-  "author": "Justin Hao <djhao@umich.edu>",
-  "contributors": [
-    "Caleb Jones <code@calebjones.net>"
   ],
   "license": "Zlib",
   "devDependencies": {
@@ -34,8 +34,7 @@
     "tslint": "5.3.2",
     "typescript": "^2.3.4",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "wallabify": "0.0.15"
+    "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
     "tsify": "^3.0.1"
