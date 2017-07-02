@@ -1,19 +1,33 @@
-import { View } from "./interface/View";
-import { TodoState } from './TodoState';
-import { Message } from "./interface/Controller";
+import { State, Message } from './TodoController';
+import { UniqueId } from './Task';
 
-export class TodoController {
-    state: TodoState;
-    view: View<TodoState>;
-    constructor(view: View<TodoState>) {
-        this.state = new TodoState();
-        this.view = view;
-        this.view.setController(this);
-        this.view.updateView(this.state);
-    }
+export type State = {
+    counter: number,
+    items: string[],
+};
 
-    postMessage(message: Message) {
-        this.state.addMessage(message);
-        this.view.updateView(this.state);
+export type Message
+    = { name: 'createTodo', title: string }
+    | { name: 'deleteTodo', id: UniqueId }
+
+export function update(state: State, message: Message): State {
+    switch (message.name) {
+        case 'createTodo':
+            return {
+                counter: state.counter + 1,
+                items: [...state.items, `Create ${message.title} (${state.counter})`],
+            };
+        case 'deleteTodo':
+            return {
+                ...state,
+                items: [...state.items, `Delete ${message.id}`],
+            };
     }
+}
+
+export function init(): State {
+    return {
+        counter: 0,
+        items: [],
+    };
 }

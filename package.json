@@ -37,6 +37,8 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "@types/deku": "^2.0.0",
+    "deku": "^2.0.0-rc16",
     "tsify": "^3.0.1"
   }
 }
