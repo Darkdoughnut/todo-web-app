@@ -10,7 +10,7 @@
 
 # Model
 
-The fundamental thing is a `Task`
+The fundamental thing is a `Task`.
 `Task`s have:
 
 - A title
