@@ -1,13 +1,15 @@
-import { View } from './interface/view';
-import { TodoController } from "./TodoController";
-import { TodoView } from "./TodoView";
+import { createApp, VirtualElement } from 'deku'
+import { init, update, State, Message } from './TodoController';
+import * as TodoList from './components/TodoList';
 
-let view = new TodoView();
-let controller = new TodoController(view);
+let render = createApp(document.body);
 
-function draw() {
-    requestAnimationFrame(draw);
-    view.render(document.body);
+function main(state: State) {
+    let vnode = TodoList.render(state, (msg: Message) => {
+        let nextState = update(state, msg);
+        main(nextState);
+    });
+    render(vnode);
 }
 
-draw();
+main(init());
