@@ -32,13 +32,13 @@
     "gulp-uglify": "^2.0.0",
     "run-sequence": "^1.2.2",
     "tslint": "5.3.2",
-    "typescript": "^2.3.4",
+    "typescript": "^2.4.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
     "@types/deku": "^2.0.0",
-    "deku": "^2.0.0-rc16",
+    "deku": "^2.0.0-rc9",
     "tsify": "^3.0.1"
   }
 }

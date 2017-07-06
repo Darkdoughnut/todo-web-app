@@ -43,12 +43,13 @@ gulp.task("build-test", function () {
         "src/**/**.ts",
         "test/**/**.test.ts",
         "typings/main.d.ts/",
-        "source/interfaces/interfaces.d.ts"],
+        // "src/interfaces/interfaces.d.ts"
+    ],
         { base: "." }
     )
         .pipe(tsTestProject())
         .on("error", function (err) {
-            // process.exit(1);
+            process.exit(1);
         })
         .js
         .pipe(gulp.dest("."));
